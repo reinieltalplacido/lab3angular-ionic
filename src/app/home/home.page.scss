@@ -331,15 +331,25 @@ ion-card[color="light"] {
     --min-height: 52px;
     --padding-start: 14px;
     --padding-end: 14px;
+    margin-left: 12px;
+    position: relative;
     
     ion-radio {
+      --color: #3880ff;
+      --color-checked: #3880ff;
+      --size: 22px;
+      --border-width: 2px;
+      position: absolute;
       left: 14px;
-      --size: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
     }
     
     ion-label {
       margin-left: 32px;
       font-size: 0.9rem;
+      padding-left: 8px;
     }
   }
   
@@ -347,4 +357,26 @@ ion-card[color="light"] {
     margin-top: 24px;
     padding-top: 20px;
   }
+}
+
+/* Global radio button override to ensure visibility */
+ion-radio {
+  --color: #3880ff !important;
+  --color-checked: #3880ff !important;
+  --size: 22px !important;
+  --border-width: 2px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force radio buttons to be visible in all contexts */
+ion-radio-group ion-item ion-radio {
+  --color: #3880ff !important;
+  --color-checked: #3880ff !important;
+  --size: 22px !important;
+  --border-width: 2px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
