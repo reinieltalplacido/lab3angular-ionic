@@ -9,7 +9,6 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   
-  <!-- Student Information Form -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Student Information</ion-card-title>
@@ -44,7 +43,7 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Quiz Questions -->
+ 
   <ion-card>
     <ion-card-header>
       <ion-card-title>Modern Architecture Quiz</ion-card-title>
@@ -52,7 +51,7 @@
     </ion-card-header>
     <ion-card-content>
       
-      <!-- Question 1 -->
+     
       <div class="question-container">
         <h3>Question 1</h3>
         <p class="question-text">Which architectural movement, characterized by the use of steel, glass, and reinforced concrete, emerged in the early 20th century and emphasized functional design over decorative elements?</p>
@@ -77,7 +76,7 @@
         </ion-radio-group>
       </div>
 
-      <!-- Question 2 -->
+     
       <div class="question-container">
         <h3>Question 2</h3>
         <p class="question-text">Who is considered the father of modern architecture and designed the iconic Villa Savoye, which exemplifies the "Five Points of Architecture"?</p>
@@ -102,7 +101,7 @@
         </ion-radio-group>
       </div>
 
-      <!-- Question 3 -->
+     
       <div class="question-container">
         <h3>Question 3</h3>
         <p class="question-text">Which architectural principle emphasizes that "form follows function" and became a fundamental concept in modern architecture?</p>
@@ -127,7 +126,7 @@
         </ion-radio-group>
       </div>
 
-      <!-- Submit Button -->
+    
       <div class="submit-container">
         <ion-button 
           expand="block" 
@@ -141,7 +140,7 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Results Display -->
+  
   <ion-card *ngIf="showResults" color="light">
     <ion-card-header>
       <ion-card-title>Quiz Results</ion-card-title>

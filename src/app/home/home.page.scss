@@ -1,15 +1,11 @@
-// Modern Architecture Quiz - Clean & Professional Styling
-
-// Import Geist font with fallbacks
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-// Global font and spacing
 * {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   box-sizing: border-box;
 }
 
-// Header styling
+
 ion-header {
   ion-toolbar {
     --background: linear-gradient(135deg, #3880ff, #3171e0);
@@ -43,7 +39,7 @@ ion-header {
   }
 }
 
-// Content area
+
 ion-content {
   --background: #f8f9fa;
   
@@ -52,7 +48,7 @@ ion-content {
   }
 }
 
-// Card styling
+
 ion-card {
   margin: 0 0 24px 0;
   border-radius: 16px;
@@ -88,7 +84,7 @@ ion-card {
   }
 }
 
-// Form items
+
 ion-item {
   --background: transparent;
   --border-radius: 12px;
@@ -134,7 +130,7 @@ ion-item {
   }
 }
 
-// Question containers
+
 .question-container {
   background: #f8f9fa;
   border-radius: 12px;
@@ -163,7 +159,7 @@ ion-item {
   }
 }
 
-// Radio button groups
+
 ion-radio-group {
   ion-item {
     --background: transparent;
@@ -212,14 +208,14 @@ ion-radio-group {
   }
 }
 
-// Submit button container
+
 .submit-container {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 2px solid #e9ecef;
 }
 
-// Buttons
+
 ion-button {
   --border-radius: 12px;
   --box-shadow: 0 4px 16px rgba(56, 128, 255, 0.3);
@@ -235,7 +231,7 @@ ion-button {
   }
 }
 
-// Badges
+
 ion-badge {
   font-size: 1rem;
   font-weight: 600;
@@ -243,7 +239,7 @@ ion-badge {
   border-radius: 8px;
 }
 
-// Results card
+
 ion-card[color="light"] {
   ion-card-header {
     background: linear-gradient(135deg, #10dc60, #0ec254);
@@ -260,7 +256,7 @@ ion-card[color="light"] {
   }
 }
 
-// Mobile responsiveness
+
 @media (max-width: 576px) {
   ion-header ion-toolbar {
     --min-height: 90px;
@@ -359,7 +355,7 @@ ion-card[color="light"] {
   }
 }
 
-/* Global radio button override to ensure visibility */
+
 ion-radio {
   --color: #3880ff !important;
   --color-checked: #3880ff !important;
@@ -370,7 +366,7 @@ ion-radio {
   opacity: 1 !important;
 }
 
-/* Force radio buttons to be visible in all contexts */
+
 ion-radio-group ion-item ion-radio {
   --color: #3880ff !important;
   --color-checked: #3880ff !important;
