@@ -1,20 +1,164 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Modern Architecture Quiz
     </ion-title>
+    <div class="toolbar-subtitle">College of Fine Arts and Design</div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <!-- Student Information Form -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Student Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Full Name</ion-label>
+        <ion-input 
+          [(ngModel)]="studentInfo.name" 
+          placeholder="Enter your full name"
+          type="text">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Section</ion-label>
+        <ion-input 
+          [(ngModel)]="studentInfo.section" 
+          placeholder="Enter your section"
+          type="text">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-input 
+          [(ngModel)]="studentInfo.date" 
+          placeholder="MM/DD/YYYY"
+          type="date">
+        </ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Quiz Questions -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Modern Architecture Quiz</ion-card-title>
+      <ion-card-subtitle>Answer all three questions below</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <!-- Question 1 -->
+      <div class="question-container">
+        <h3>Question 1</h3>
+        <p class="question-text">Which architectural movement, characterized by the use of steel, glass, and reinforced concrete, emerged in the early 20th century and emphasized functional design over decorative elements?</p>
+        
+        <ion-radio-group [(ngModel)]="answers.question1">
+          <ion-item>
+            <ion-radio value="a"></ion-radio>
+            <ion-label>Art Nouveau</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="b"></ion-radio>
+            <ion-label>International Style</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="c"></ion-radio>
+            <ion-label>Gothic Revival</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="d"></ion-radio>
+            <ion-label>Baroque</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-container">
+        <h3>Question 2</h3>
+        <p class="question-text">Who is considered the father of modern architecture and designed the iconic Villa Savoye, which exemplifies the "Five Points of Architecture"?</p>
+        
+        <ion-radio-group [(ngModel)]="answers.question2">
+          <ion-item>
+            <ion-radio value="a"></ion-radio>
+            <ion-label>Frank Lloyd Wright</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="b"></ion-radio>
+            <ion-label>Le Corbusier</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="c"></ion-radio>
+            <ion-label>Ludwig Mies van der Rohe</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="d"></ion-radio>
+            <ion-label>Walter Gropius</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-container">
+        <h3>Question 3</h3>
+        <p class="question-text">Which architectural principle emphasizes that "form follows function" and became a fundamental concept in modern architecture?</p>
+        
+        <ion-radio-group [(ngModel)]="answers.question3">
+          <ion-item>
+            <ion-radio value="a"></ion-radio>
+            <ion-label>Ornamentation</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="b"></ion-radio>
+            <ion-label>Symmetry</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="c"></ion-radio>
+            <ion-label>Functionalism</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="d"></ion-radio>
+            <ion-label>Classicism</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="submit-container">
+        <ion-button 
+          expand="block" 
+          color="success" 
+          (click)="submitQuiz()"
+          [disabled]="!isFormComplete()">
+          Submit Quiz
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Results Display -->
+  <ion-card *ngIf="showResults" color="light">
+    <ion-card-header>
+      <ion-card-title>Quiz Results</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Score:</ion-label>
+        <ion-badge color="primary">{{score}}/3</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>Percentage:</ion-label>
+        <ion-badge color="secondary">{{(score/3)*100}}%</ion-badge>
+      </ion-item>
+      <ion-button expand="block" color="medium" (click)="resetQuiz()">
+        Take Quiz Again
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

@@ -1,27 +1,350 @@
-#container {
-  text-align: center;
+// Modern Architecture Quiz - Clean & Professional Styling
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+// Import Geist font with fallbacks
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Global font and spacing
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+// Header styling
+ion-header {
+  ion-toolbar {
+    --background: linear-gradient(135deg, #3880ff, #3171e0);
+    --color: white;
+    --min-height: 100px;
+    padding: 0;
+    
+    ion-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      line-height: 1.2;
+      position: relative;
+      top: 15px;
+    }
+    
+    .toolbar-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+      display: block;
+      position: relative;
+      top: -20px;
+    }
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+// Content area
+ion-content {
+  --background: #f8f9fa;
+  
+  .ion-padding {
+    padding: 20px;
+  }
 }
 
-#container a {
-  text-decoration: none;
+// Card styling
+ion-card {
+  margin: 0 0 24px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  overflow: hidden;
+  
+  ion-card-header {
+    background: linear-gradient(135deg, #3880ff, #3171e0);
+    color: white;
+    padding: 24px 20px 20px;
+    margin: 0;
+    
+    ion-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+    }
+    
+    ion-card-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.3;
+    }
+  }
+  
+  ion-card-content {
+    padding: 24px 20px;
+    background: white;
+  }
+}
+
+// Form items
+ion-item {
+  --background: transparent;
+  --border-radius: 12px;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 20px;
+  border: none;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  ion-label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  ion-input {
+    --background: #f8f9fa;
+    --color: #2c3e50;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+    --border-radius: 10px;
+    --border: 2px solid transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    
+    &:focus {
+      --border-color: #3880ff;
+      --background: white;
+    }
+    
+    &::placeholder {
+      color: #95a5a6;
+      font-weight: 400;
+    }
+  }
+}
+
+// Question containers
+.question-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid #e9ecef;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h3 {
+    color: #3880ff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  
+  .question-text {
+    color: #2c3e50;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+  }
+}
+
+// Radio button groups
+ion-radio-group {
+  ion-item {
+    --background: transparent;
+    --border-radius: 10px;
+    margin-bottom: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --inner-padding-end: 0;
+    --min-height: 56px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+    position: relative;
+    
+    &:hover {
+      --background: #e3f2fd;
+      border-color: #3880ff;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    ion-radio {
+      --color: #3880ff;
+      --color-checked: #3880ff;
+      margin-right: 16px;
+      --border-width: 2px;
+      --size: 20px;
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    ion-label {
+      color: #2c3e50;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 0 0 36px;
+      line-height: 1.4;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
+
+// Submit button container
+.submit-container {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #e9ecef;
+}
+
+// Buttons
+ion-button {
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(56, 128, 255, 0.3);
+  font-weight: 600;
+  font-size: 1rem;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --padding-start: 32px;
+  --padding-end: 32px;
+  
+  &:hover {
+    --box-shadow: 0 6px 20px rgba(56, 128, 255, 0.4);
+  }
+}
+
+// Badges
+ion-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+// Results card
+ion-card[color="light"] {
+  ion-card-header {
+    background: linear-gradient(135deg, #10dc60, #0ec254);
+  }
+  
+  ion-item {
+    --background: transparent;
+    margin-bottom: 12px;
+    
+    ion-label {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 576px) {
+  ion-header ion-toolbar {
+    --min-height: 90px;
+    
+    ion-title {
+      font-size: 1.2rem;
+      top: 20px;
+    }
+    
+    .toolbar-subtitle {
+      font-size: 0.8rem;
+      top: -35px;
+    }
+  }
+  
+  ion-content .ion-padding {
+    padding: 16px;
+  }
+  
+  ion-card {
+    margin-bottom: 20px;
+    
+    ion-card-header {
+      padding: 20px 16px 16px;
+      
+      ion-card-title {
+        font-size: 1.2rem;
+      }
+      
+      ion-card-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+    
+    ion-card-content {
+      padding: 20px 16px;
+    }
+  }
+  
+  .question-container {
+    padding: 20px;
+    margin-bottom: 24px;
+    
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    
+    .question-text {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+  }
+  
+  ion-item {
+    margin-bottom: 16px;
+    
+    ion-input {
+      --padding-start: 14px;
+      --padding-end: 14px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+    }
+  }
+  
+  ion-radio-group ion-item {
+    margin-bottom: 10px;
+    --min-height: 52px;
+    --padding-start: 14px;
+    --padding-end: 14px;
+    
+    ion-radio {
+      left: 14px;
+      --size: 18px;
+    }
+    
+    ion-label {
+      margin-left: 32px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .submit-container {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
 }
