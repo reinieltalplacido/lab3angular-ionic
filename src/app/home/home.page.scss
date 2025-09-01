@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
 
 * {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   box-sizing: border-box;
 }
 
 
 ion-header {
   ion-toolbar {
-    --background: linear-gradient(135deg, #3880ff, #3171e0);
-    --color: white;
+    --background: #000000;
+    --color: #ffffff;
     --min-height: 100px;
     padding: 0;
     
@@ -22,6 +22,8 @@ ion-header {
       line-height: 1.2;
       position: relative;
       top: 15px;
+      color: #ffffff;
+      font-family: 'Geist', sans-serif;
     }
     
     .toolbar-subtitle {
@@ -35,42 +37,44 @@ ion-header {
       display: block;
       position: relative;
       top: -20px;
+      font-family: 'Geist', sans-serif;
     }
   }
 }
 
-
 ion-content {
-  --background: #f8f9fa;
+  --background: #000000;
   
   .ion-padding {
     padding: 20px;
   }
 }
 
-
 ion-card {
   margin: 0 0 24px 0;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  background: #000000;
   
   ion-card-header {
-    background: linear-gradient(135deg, #3880ff, #3171e0);
-    color: white;
+    background: #000000;
+    color: #ffffff;
     padding: 24px 20px 20px;
     margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     
     ion-card-title {
       font-size: 1.3rem;
       font-weight: 700;
       margin: 0 0 8px 0;
       line-height: 1.3;
+      color: #ffffff;
     }
     
     ion-card-subtitle {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.8);
       font-size: 0.95rem;
       font-weight: 400;
       margin: 0;
@@ -80,14 +84,13 @@ ion-card {
   
   ion-card-content {
     padding: 24px 20px;
-    background: white;
+    background: #000000;
   }
 }
 
-
 ion-item {
   --background: transparent;
-  --border-radius: 12px;
+  --border-radius: 8px;
   --padding-start: 0;
   --padding-end: 0;
   --inner-padding-end: 0;
@@ -100,50 +103,49 @@ ion-item {
   
   ion-label {
     font-weight: 600;
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 0.95rem;
     margin-bottom: 8px;
     display: block;
   }
   
   ion-input {
-    --background: #f8f9fa;
-    --color: #2c3e50;
+    --background: #ffffff;
+    --color: #000000;
     --padding-start: 16px;
     --padding-end: 16px;
     --padding-top: 14px;
     --padding-bottom: 14px;
-    --border-radius: 10px;
-    --border: 2px solid transparent;
+    --border-radius: 8px;
+    --border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 1rem;
     font-weight: 400;
     
     &:focus {
-      --border-color: #3880ff;
-      --background: white;
+      --border-color: #ffffff;
+      --background: #ffffff;
     }
     
     &::placeholder {
-      color: #95a5a6;
+      color: #666666;
       font-weight: 400;
     }
   }
 }
 
-
 .question-container {
-  background: #f8f9fa;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 32px;
-  border: 1px solid #e9ecef;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   &:last-child {
     margin-bottom: 0;
   }
   
   h3 {
-    color: #3880ff;
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0 0 16px 0;
@@ -151,31 +153,30 @@ ion-item {
   }
   
   .question-text {
-    color: #2c3e50;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 0 20px 0;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
-
 ion-radio-group {
   ion-item {
-    --background: transparent;
-    --border-radius: 10px;
+    --background: rgba(255, 255, 255, 0.05);
+    --border-radius: 8px;
     margin-bottom: 12px;
     --padding-start: 16px;
     --padding-end: 16px;
     --inner-padding-end: 0;
     --min-height: 56px;
-    border: 1px solid #e9ecef;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.2s ease;
     position: relative;
     
     &:hover {
-      --background: #e3f2fd;
-      border-color: #3880ff;
+      --background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     
     &:last-child {
@@ -183,8 +184,8 @@ ion-radio-group {
     }
     
     ion-radio {
-      --color: #3880ff;
-      --color-checked: #3880ff;
+      --color: #ffffff;
+      --color-checked: #ffffff;
       margin-right: 16px;
       --border-width: 2px;
       --size: 20px;
@@ -195,9 +196,9 @@ ion-radio-group {
     }
     
     ion-label {
-      color: #2c3e50;
+      color: #ffffff;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 400;
       margin: 0 0 0 36px;
       line-height: 1.4;
       cursor: pointer;
@@ -208,17 +209,15 @@ ion-radio-group {
   }
 }
 
-
 .submit-container {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 2px solid #e9ecef;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 ion-button {
-  --border-radius: 12px;
-  --box-shadow: 0 4px 16px rgba(56, 128, 255, 0.3);
+  --border-radius: 8px;
+  --box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
   font-weight: 600;
   font-size: 1rem;
   --padding-top: 16px;
@@ -227,10 +226,9 @@ ion-button {
   --padding-end: 32px;
   
   &:hover {
-    --box-shadow: 0 6px 20px rgba(56, 128, 255, 0.4);
+    --box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
   }
 }
-
 
 ion-badge {
   font-size: 1rem;
@@ -239,10 +237,10 @@ ion-badge {
   border-radius: 8px;
 }
 
-
 ion-card[color="light"] {
   ion-card-header {
-    background: linear-gradient(135deg, #10dc60, #0ec254);
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   ion-item {
@@ -251,11 +249,10 @@ ion-card[color="light"] {
     
     ion-label {
       font-weight: 600;
-      color: #2c3e50;
+      color: #ffffff;
     }
   }
 }
-
 
 @media (max-width: 576px) {
   ion-header ion-toolbar {
@@ -331,8 +328,8 @@ ion-card[color="light"] {
     position: relative;
     
     ion-radio {
-      --color: #3880ff;
-      --color-checked: #3880ff;
+      --color: #ffffff;
+      --color-checked: #ffffff;
       --size: 22px;
       --border-width: 2px;
       position: absolute;
@@ -355,10 +352,9 @@ ion-card[color="light"] {
   }
 }
 
-
 ion-radio {
-  --color: #3880ff !important;
-  --color-checked: #3880ff !important;
+  --color: #ffffff !important;
+  --color-checked: #ffffff !important;
   --size: 22px !important;
   --border-width: 2px !important;
   display: block !important;
@@ -366,10 +362,9 @@ ion-radio {
   opacity: 1 !important;
 }
 
-
 ion-radio-group ion-item ion-radio {
-  --color: #3880ff !important;
-  --color-checked: #3880ff !important;
+  --color: #ffffff !important;
+  --color-checked: #ffffff !important;
   --size: 22px !important;
   --border-width: 2px !important;
   display: block !important;

@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+<ion-header>
+  <ion-toolbar>
     <ion-title>
       Modern Architecture Quiz
     </ion-title>
@@ -141,22 +141,16 @@
   </ion-card>
 
   
-  <ion-card *ngIf="showResults" color="light">
+  <ion-card *ngIf="showResults">
     <ion-card-header>
       <ion-card-title>Quiz Results</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
         <ion-label>Score:</ion-label>
-        <ion-badge color="primary">{{score}}/3</ion-badge>
+        <ion-badge color="success">{{score}}/3</ion-badge>
       </ion-item>
-      <ion-item>
-        <ion-label>Percentage:</ion-label>
-        <ion-badge color="secondary">{{(score/3)*100}}%</ion-badge>
-      </ion-item>
-      <ion-button expand="block" color="medium" (click)="resetQuiz()">
-        Take Quiz Again
-      </ion-button>
+
     </ion-card-content>
   </ion-card>
 
